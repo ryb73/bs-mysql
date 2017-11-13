@@ -5,7 +5,10 @@
         "bs-config"
     ],
     "sources" : [
-        { "dir" : "src" },
+        {
+            "dir" : "src",
+            "public": [ "Mysql" ]
+        },
         {
             "dir": "test",
             "type": "dev"
