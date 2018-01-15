@@ -7,7 +7,7 @@ type config = {
     user: string,
     password: string,
     database: string
-};
+} [@@autoserialize];
 let config = switch (Config.get "test" |> config__from_json) {
     | Error _ => failwith "Error loading config"
     | Ok c => c
