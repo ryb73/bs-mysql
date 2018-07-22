@@ -22,7 +22,7 @@
     "url": "git@github.com:ryb73/bs-mysql.git"
   },
   "peerDependencies": {
-    "bs-platform": "^2.0.0"
+    "bs-platform": "^3.1.5"
   },
   "dependencies": {
     "mysql": "^2.15.0"

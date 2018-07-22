@@ -15,8 +15,8 @@ let query = (connection, query) =>
             switch (Js.toOption(err)) {
                 | Some(err) => [@bs] reject(JsonException(err))
                 | None => {
-                    let result = Js.Nullable.to_opt(result) |> Option.get;
-                    [@bs] resolve((result, Js.Nullable.to_opt(fields)))
+                    let result = Js.Nullable.toOption(result) |> Option.get;
+                    [@bs] resolve((result, Js.Nullable.toOption(fields)))
                 }
             }
         )

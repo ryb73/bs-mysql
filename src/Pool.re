@@ -3,7 +3,7 @@ open SharedTypes;
 [@bs.obj]
 external _options :
     (
-        ~acquireTimeout: int=?, ~waitForConnections: Js.boolean=?,
+        ~acquireTimeout: int=?, ~waitForConnections: bool=?,
         ~connectionLimit: int=?, ~queueLimit: int=?, unit
     ) => poolOptions = "";
 

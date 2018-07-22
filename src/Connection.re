@@ -1,28 +1,14 @@
 open SharedTypes;
 
 [@bs.obj]
-external _options :
+external options :
     (
         ~host: string=?, ~port: int=?, ~localAddress: string=?,
         ~socketPath: string=?, ~database: string=?, ~charset: string=?,
-        ~timezone: string=?, ~connectTimeout: int=?, ~insecureAuth: Js.boolean=?,
-        ~supportBigNumbers: Js.boolean=?, ~debug: Js.boolean=?, ~trace: Js.boolean=?,
+        ~timezone: string=?, ~connectTimeout: int=?, ~insecureAuth: bool=?,
+        ~supportBigNumbers: bool=?, ~debug: bool=?, ~trace: bool=?,
         ~user: string=?, ~password: string=?, unit
     ) => connectionOptions = "";
-
-let options = (
-    ~host=?, ~port=?, ~localAddress=?, ~socketPath=?, ~database=?, ~charset=?,
-    ~timezone=?, ~connectTimeout=?, ~insecureAuth=?, ~supportBigNumbers=?,
-    ~debug=?, ~trace=?, ~user=?, ~password=?, ()
-) => {
-    _options(~host?, ~port?, ~localAddress?, ~socketPath?, ~database?, ~charset?,
-        ~timezone?, ~connectTimeout?, ~user?, ~password?,
-        ~insecureAuth=?Option.map(Js.Boolean.to_js_boolean, insecureAuth),
-        ~supportBigNumbers=?Option.map(Js.Boolean.to_js_boolean, supportBigNumbers),
-        ~debug=?Option.map(Js.Boolean.to_js_boolean, debug),
-        ~trace=?Option.map(Js.Boolean.to_js_boolean, trace), ()
-    );
-};
 
 type _t;
 type t = Queryable.t(_t);

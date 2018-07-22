@@ -2,7 +2,7 @@ open Js.Promise;
 open Option.Infix;
 open BatPervasives;
 
-[@autoserialize]
+[@decco]
 type config = {
     host: string,
     user: string,
