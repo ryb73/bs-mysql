@@ -10,7 +10,7 @@ external _query :
     ) => unit = "query";
 
 let query = (connection, query) =>
-    Js.Promise.make((~resolve, ~reject) =>
+    Reduice.Promise.make((~resolve, ~reject) =>
         _query(connection, query, (err, result, fields) =>
             switch (Js.toOption(err)) {
                 | Some(err) => [@bs] reject(JsonException(err))

@@ -27,7 +27,7 @@ type t = Queryable.t(_t);
 [@bs.send] external _end : (t, Js.nullable(Js.Json.t) => unit) => unit = "end";
 
 let end_ = (connection) =>
-    Js.Promise.make((~resolve, ~reject) =>
+    Reduice.Promise.make((~resolve, ~reject) =>
         _end(connection, (err) =>
             switch (Js.toOption(err)) {
                 | None => {

@@ -2,7 +2,8 @@
     "name" : "bs-mysql",
     "bs-dependencies": [
         "bs-batteries",
-        "bs-config"
+        "bs-config",
+        "reduice"
     ],
     "bs-dev-dependencies": [
         "decco"

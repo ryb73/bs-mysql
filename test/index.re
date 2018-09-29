@@ -1,4 +1,4 @@
-open Js.Promise;
+open Reduice.Promise;
 open Option.Infix;
 open BatPervasives;
 
@@ -11,7 +11,7 @@ type config = {
 };
 
 let config =
-    switch (Config.get("test") |> config__from_json) {
+    switch (Config.get("test") |> config_decode) {
         | Error(_) => failwith("Error loading config")
         | Ok(c) => c
     };
